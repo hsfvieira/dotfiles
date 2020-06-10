@@ -2,27 +2,30 @@
 sudo apt update
 sudo apt upgrade -y
 
-echo "Instalando Gnome Tweak Tool:"
+echo ">>> Instalando Gnome Tweak Tool:"
 sudo apt install gnome-tweak-tool -y
 
-echo "Instalando Git:"
+echo ">>> Instalando Git:"
 sudo apt install git -y
 
-echo "Instalando Zsh:"
+echo ">>> Instalando Zsh:"
 sudo apt install zsh -y
 
-echo "Instalando VSCode:"
+echo ">>> Instalando VSCode:"
 sudo snap install code --classic
 
-echo "Instalando Insomnia:"
+echo ">>> Instalando Insomnia:"
 sudo snap install insomnia
 sudo snap install insomnia-designer
 
-echo "Instalando Spotify:"
+echo ">>> Instalando Spotify:"
 sudo snap install spotify
 
+echo ">>> Instalando Vim:"
+sudo apt install vim -y
+
 # Install Docker
-echo "Instalando Docker:"
+echo ">>> Instalando Docker:"
 sudo apt-get remove docker docker-engine docker.io containerd runc
 sudo apt-get install \
     apt-transport-https \
@@ -43,21 +46,30 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 
 # Create folders
-echo "Criando Pastas:"
+echo ">>> Criando Pastas:"
 mkdir ~/Projetos
 mkdir ~/.ssh
 
-echo "Criando Chaves SSH:"
-ssh-keygen
+echo ">>> Criando Chaves SSH:"
+#ssh-keygen
 
 # Install .gitconfig
+echo ">>> Copiando .gitconfig:"
 cp .gitconfig ~/
 
 # Change to Zsh
 sudo chsh -s $(which zsh)
-echo "Instalando Oh My Zsh:"
+echo ">>> Instalando Oh My Zsh:"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# Copy to Zsh
-echo "Adicionado Alias:"
-echo "alias gitlog=\"git log --decorate --all --graph --oneline\"" >> ~/.zshrc
+# Copy Zshrc
+echo ">>> Copiando .zshrc:"
+cp .zshrc ~/
+
+# Install Dracula VIM
+echo ">>> Instalando VIM Dracula:"
+mkdir -p ~/.vim/pack/themes/start
+git clone https://github.com/dracula/vim.git ~/.vim/pack/themes/start/dracula
+
+echo ">>> Copiando .vimrc"
+cp .vimrc ~/
