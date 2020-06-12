@@ -50,9 +50,6 @@ echo ">>> Criando Pastas:"
 mkdir ~/Projetos
 mkdir ~/.ssh
 
-echo ">>> Criando Chaves SSH:"
-#ssh-keygen
-
 # Install .gitconfig
 echo ">>> Copiando .gitconfig:"
 cp .gitconfig ~/
