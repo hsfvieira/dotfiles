@@ -8,9 +8,6 @@ sudo apt install gnome-tweak-tool -y
 echo ">>> Instalando Git:"
 sudo apt install git -y
 
-echo ">>> Instalando Zsh:"
-sudo apt install zsh -y
-
 echo ">>> Instalando VSCode:"
 sudo snap install code --classic
 
@@ -20,9 +17,6 @@ sudo snap install insomnia-designer
 
 echo ">>> Instalando Spotify:"
 sudo snap install spotify
-
-echo ">>> Instalando Vim:"
-sudo apt install vim -y
 
 # Install Docker
 echo ">>> Instalando Docker:"
@@ -53,20 +47,3 @@ mkdir ~/.ssh
 # Install .gitconfig
 echo ">>> Copiando .gitconfig:"
 cp .gitconfig ~/
-
-# Change to Zsh
-sudo chsh -s $(which zsh)
-echo ">>> Instalando Oh My Zsh:"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-# Copy Zshrc
-echo ">>> Copiando .zshrc:"
-cp .zshrc ~/
-
-# Install Dracula VIM
-echo ">>> Instalando VIM Dracula:"
-mkdir -p ~/.vim/pack/themes/start
-git clone https://github.com/dracula/vim.git ~/.vim/pack/themes/start/dracula
-
-echo ">>> Copiando .vimrc"
-cp .vimrc ~/
