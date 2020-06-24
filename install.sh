@@ -42,6 +42,7 @@ sudo usermod -aG docker $USER
 # Create folders
 echo ">>> Criando Pastas:"
 mkdir ~/Projetos
+mkdir ~/Remoto
 mkdir ~/.ssh
 
 # Install .gitconfig
